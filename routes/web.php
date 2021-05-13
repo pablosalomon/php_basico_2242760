@@ -39,7 +39,7 @@ Route:: get("arreglos", function(){
 });
 
 
-Route:: get("paises", function(){
+Route::get("paises", function(){
 
     $paises = [
             "COLOMBIA" =>[
@@ -59,12 +59,8 @@ Route:: get("paises", function(){
             ],
     ];
 
-    foreach($paises as $nombrepais => $pais){
-    echo "<h1>$nombrepais</h1>";
-    echo "<pre>";
-    print_r($pais);
-    echo "</pre>";
-    echo "<hr />";
-    }
+    //invocar la vista
+    //llevando los datos a ella
+    return view("paises")->with("Naciones", $paises);
 
 });
